@@ -12,6 +12,7 @@ import java.util.Collections;
 
 public class Game extends JFrame implements ActionListener{
 
+    DiceFactory diceFactory = new DiceFactory();
     private final int NUMBER_OF_DICE = 2;
     private int currentTotal;
     private int knockOutNumber;
