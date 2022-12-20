@@ -12,3 +12,4 @@
 6 poäng, 9
 3 poäng, p
 5 poäng, peter
+2 poäng, Stefan

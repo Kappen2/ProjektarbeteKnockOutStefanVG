@@ -13,7 +13,6 @@ import java.util.Collections;
 public class Game extends JFrame implements ActionListener{
 
     DiceFactory diceFactory = new DiceFactory();
-    private final int NUMBER_OF_DICE = 2;
     private int currentTotal;
     private int knockOutNumber;
     private String name;
@@ -36,7 +35,7 @@ public class Game extends JFrame implements ActionListener{
     JLabel highscore3 =  new JLabel();
 
 
-    public Game(String name, int knockoutNumber) throws IOException {
+    public Game(String name, int knockoutNumber, int numberOfDice) throws IOException {
         this.add(basePanel);
         basePanel.setLayout(new BorderLayout());
         basePanel.add(topHalf, BorderLayout.NORTH);
@@ -56,9 +55,9 @@ public class Game extends JFrame implements ActionListener{
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        if (knockoutNumber < NUMBER_OF_DICE || knockoutNumber > 6 * NUMBER_OF_DICE) {
+        if (knockoutNumber < numberOfDice || knockoutNumber > 6 * numberOfDice) {
             JOptionPane.showMessageDialog(null, "KnockOut-nummer måste vara mellan "
-                    + NUMBER_OF_DICE + "-" + NUMBER_OF_DICE * 6 + "!");
+                    + numberOfDice + "-" + numberOfDice * 6 + "!");
             throw new IllegalArgumentException();
         }
         this.name = name;
